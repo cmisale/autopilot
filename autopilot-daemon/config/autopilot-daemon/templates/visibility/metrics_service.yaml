@@ -1,0 +1,17 @@
+---
+# Source: autopilot-daemon/templates/visibility/metrics_service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: autopilot
+  name: autopilot-metrics-service
+  namespace: autopilot
+spec:
+  ports:
+  - name: http
+    port: 8081
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: autopilot

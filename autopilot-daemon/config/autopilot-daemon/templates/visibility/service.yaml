@@ -1,0 +1,19 @@
+---
+# Source: autopilot-daemon/templates/visibility/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: autopilot
+  name: autopilot-healthchecks
+  namespace: autopilot
+  annotations:
+    null
+spec:
+  # type: 
+  ports:
+    - port: 3333
+      protocol: TCP
+      name: healthcheck
+  selector:
+    app: autopilot
