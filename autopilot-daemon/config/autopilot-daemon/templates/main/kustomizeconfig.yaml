@@ -1,0 +1,16 @@
+nameReference:
+- kind: DaemonSet
+  template:
+    spec:
+      containers:
+        - name: autopilot
+          command:
+           - sh
+           - -c
+           - |
+             /usr/local/bin/autopilot --port 3333 --loglevel=2 --bw 4 --w 1 --intrusive-check-timer 4
+          env:
+            - name: PERIODIC_CHECKS
+              value: pciebw,remapped,dcgm,ping,gpupower
+            - name: PVC_TEST_STORAGE_CLASS
+              value:  ""

@@ -1,0 +1,5 @@
+resources:
+- autopilot.yaml
+
+configurations:
+- kustomizeconfig.yaml
