@@ -5,7 +5,7 @@ kind: DaemonSet
 metadata:
   labels:
     app: autopilot
-  name: autopilot
+  name: daemon
   namespace: autopilot
 spec:
   selector:
